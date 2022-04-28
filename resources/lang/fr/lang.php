@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "dir" => "ltr",
     "Welcome" => "Connectez-vous pour continuer sur DabaPermis.",
     "ForgetPassword" => "Mot de passe oublié",
     "SignIn" => "S'identifier",

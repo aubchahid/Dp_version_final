@@ -10,20 +10,20 @@
                             <p class="mb-0"> {{ __('lang.RegisterText') }}</p>
                         </div>
                         <div class="p-40">
-                            <form action="" method="post">
+                            <form wire:submit.prevent="register">
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>{{ __('lang.Email') }}</label>
-                                            <input type="email" class="form-control h-50"
-                                                placeholder="{{ __('lang.EmailPlaceHolder') }}">
+                                            <input type="email" class="form-control h-50" wire:model.lazy="email"
+                                                required placeholder="{{ __('lang.EmailPlaceHolder') }}">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>{{ __('lang.Fullname') }}</label>
-                                            <input type="text" class="form-control h-50"
-                                                placeholder="{{ __('lang.FullnamePlaceHolder') }}">
+                                            <input type="text" class="form-control h-50" wire:model.lazy="fullname"
+                                                required placeholder="{{ __('lang.FullnamePlaceHolder') }}">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -31,29 +31,30 @@
                                             <label>{{ __('lang.PhoneNo') }}</label>
                                             <input
                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                type="number" maxlength="10" class="form-control h-50"
+                                                type="number" maxlength="10" class="form-control h-50" required
+                                                wire:model.lazy="phoneNo"
                                                 placeholder="{{ __('lang.PhoneNoPlaceHolder') }}">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>{{ __('lang.SchoolName') }}</label>
-                                            <input type="text" class="form-control h-50"
-                                                placeholder="{{ __('lang.SchoolNamePlaceHolder') }}">
+                                            <input type="text" class="form-control h-50" wire:model.lazy="schoolName"
+                                                required placeholder="{{ __('lang.SchoolNamePlaceHolder') }}">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>{{ __('lang.City') }}</label>
-                                            <input type="text" class="form-control h-50"
+                                            <input type="text" class="form-control h-50" wire:model.lazy="city" required
                                                 placeholder="{{ __('lang.CityPlaceHolder') }}">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label>{{ __('lang.Address') }}</label>
-                                            <input type="text" class="form-control h-50"
-                                                placeholder="{{ __('lang.AddressPlaceHolder') }}">
+                                            <input type="text" class="form-control h-50" wire:model.lazy="address"
+                                                required placeholder="{{ __('lang.AddressPlaceHolder') }}">
                                         </div>
                                     </div>
                                 </div>

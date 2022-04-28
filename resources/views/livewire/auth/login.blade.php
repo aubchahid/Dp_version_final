@@ -10,16 +10,15 @@
                             <p class="mb-0"> {{ __('lang.Welcome') }}</p>
                         </div>
                         <div class="p-40">
-                            <form action="" method="post">
-
+                            <form wire:submit.prevent="submit">
                                 <div class="form-group">
                                     <label>{{ __('lang.Email') }}</label>
-                                    <input type="email" class="form-control h-50"
+                                    <input type="email" class="form-control h-50" wire:model="email" required
                                         placeholder="{{ __('lang.EmailPlaceHolder') }}">
                                 </div>
                                 <div class="form-group">
                                     <label>{{ __('lang.Password') }}</label>
-                                    <input type="password" class="form-control h-50"
+                                    <input type="password" class="form-control h-50" wire:model="password" required
                                         placeholder="{{ __('lang.PasswordPlaceHolder') }}">
                                 </div>
                                 <div class="row">

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Index extends Component
+class Demandes extends Component
 {
     use WithPagination;
 
@@ -70,8 +70,9 @@ class Index extends Component
 
     public function render()
     {
-        $inscription = Inscription::where('status', '=', 0)->where('fullname', 'like', '%' . $this->search . '%')->orWhere('schoolName', 'like', '%' . $this->search . '%')->orderBy('created_at', 'desc')->limit(5)->get();
-        $school = School::get();
-        return view('livewire.dashboard.admin.index', ['inscriptions' => $inscription, "schools" => $school])->layout('layouts.dashboard', ['title' => 'Dashboard']);
+        $inscription = Inscription::where('status', '=', 0)->where('fullname', 'like', '%' . $this->search . '%')->orWhere('schoolName', 'like', '%' . $this->search . '%')->orderBy('created_at', 'desc')->paginate(8);
+        $inscriptionInHold = Inscription::where('status', '=', 0)->get();
+        $inscriptionRefused =  Inscription::where('status', '=', 100)->get();
+        return view('livewire.dashboard.admin.demandes', ['inscriptions' => $inscription, 'inscriptionInHold' => $inscriptionInHold, 'inscriptionRefused' => $inscriptionRefused])->layout('layouts.dashboard', ['title' => "Demandes d'inscriptions"]);
     }
 }
