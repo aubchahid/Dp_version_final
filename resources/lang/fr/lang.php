@@ -1,0 +1,25 @@
+<?php
+
+return [
+    "Welcome" => "Connectez-vous pour continuer sur DabaPermis.",
+    "ForgetPassword" => "Mot de passe oublié",
+    "SignIn" => "S'identifier",
+    "Register" => "ليس لديك حساب؟ سجل الان",
+    "LogIn" => "Vous n'avez pas de compte ? S'inscrire maintenant",
+    "Email" => "Adresse e-mail",
+    "Password" => "كلمه السر",
+    "EmailPlaceHolder" => "أدخل عنوان بريدك الإلكتروني هنا",
+    "PasswordPlaceHolder" => "أدخل كلمة المرور الخاصة بك هنا",
+    "RegisterText" => "طلب حساب DabaPermis.",
+    "Fullname" => "الاسم الكامل",
+    "FullnamePlaceHolder" => "أدخل اسمك الكامل هنا",
+    "PhoneNo" => "رقم هاتفك أو رقم هاتف مدرسة لتعليم القيادة    ",
+    "PhoneNoPlaceHolder" => "أدخل رقم هاتفك أو رقم هاتف مدرسة لتعليم القيادة الخاصة بك هنا",
+    "SchoolName" => "اسم مدرسة لتعليم القيادة الخاصة بك",
+    "SchoolNamePlaceHolder" => "أدخل اسم مدرسة لتعليم القيادة الخاصة بك",
+    "City" => "المدينة",
+    "CityPlaceHolder" => "أدخل المدينة",
+    "Address" => "عنوان مدرسة تعليم القيادة",
+    "AddressPlaceHolder" => "أدخل عنوان مدرسة تعليم القيادة",
+    "Send" => "أرسل الطلب",
+];

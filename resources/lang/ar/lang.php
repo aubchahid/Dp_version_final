@@ -1,0 +1,42 @@
+
+<?php
+
+return [
+    "Welcome" => " قم بتسجيل الدخول للمتابعة على DabaPermis.",
+    "ForgetPassword" => "نسيت كلمة السر",
+    "SignIn" => "تسجيل الدخول",
+    "Register" => "ليس لديك حساب؟ سجل الان",
+    "LogIn" => "هل لديك حساب؟ تسجيل الدخول",
+    "Email" => "البريد الالكتروني",
+    "Password" => "كلمه السر",
+    "EmailPlaceHolder" => "أدخل عنوان بريدك الإلكتروني هنا",
+    "PasswordPlaceHolder" => "أدخل كلمة المرور الخاصة بك هنا",
+    "RegisterText" => "طلب حساب DabaPermis.",
+    "Fullname" => "الاسم الكامل",
+    "FullnamePlaceHolder" => "أدخل اسمك الكامل هنا",
+    "PhoneNo" => "رقم الهاتف",
+    "PhoneNoPlaceHolder" => "أدخل رقم هاتفك أو رقم هاتف مدرسة لتعليم القيادة الخاصة بك هنا",
+    "SchoolName" => "اسم مدرسة لتعليم القيادة الخاصة بك",
+    "SchoolNamePlaceHolder" => "أدخل اسم مدرسة لتعليم القيادة الخاصة بك",
+    "City" => "المدينة",
+    "CityPlaceHolder" => "أدخل المدينة",
+    "Address" => "عنوان مدرسة تعليم القيادة",
+    "AddressPlaceHolder" => "أدخل عنوان مدرسة تعليم القيادة",
+    "Send" => "أرسل الطلب",
+    "Management" => "إدارة المنصة",
+    "Dashboard" => "الصفحة الرئيسية",
+    "Demandes" => "طلبات",
+    "Demande" => "طلب",
+    "Candidates" => "المرشحون",
+    "Candidate" => "مرشح",
+    "Schools" => "مدارس التعليم السياقة",
+    "School" => "مدرسة",
+    "Stats" => "الاحصائيات الشهرية",
+    "Currancy" => "درهما",
+    "DemandesMenu" => "طلبات التسجيل",
+    "SchoolNameTable" => "اسم مدرسة لتعليم القيادة",
+    "DateOfDemande" => "تاريخ الطلب",
+    "Open" => "افتح",
+
+
+];
