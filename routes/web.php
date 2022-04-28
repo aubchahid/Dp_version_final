@@ -7,6 +7,7 @@ use App\Http\Livewire\Dashboard\Index;
 use App\Http\Livewire\Dashboard\Schools;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,8 @@ Route::any('/logout', function (Request $request) {
     $request->session()->regenerateToken();
     return redirect('/login');
 });
+
+
 
 
 
