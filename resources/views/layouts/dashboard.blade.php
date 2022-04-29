@@ -181,7 +181,7 @@
     <script>
         window.livewire.on('success', () => {
             $('#detailsRequest').modal('hide');
-
+            $('#addSchool').modal('hide');
         });
         window.addEventListener('contentChanged', e => {
             const Toast = Swal.mixin({

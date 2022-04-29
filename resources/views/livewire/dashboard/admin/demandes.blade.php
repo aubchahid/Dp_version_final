@@ -52,7 +52,6 @@
                             wire:model="search">
                     </div>
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body no-padding">
                     <div class="table-responsive">
                         <table class="table table-hover">
@@ -67,7 +66,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @foreach ($inscriptions as $in)
                                     <tr>
                                         <td>{{ $in->fullname }}</td>
@@ -87,7 +85,6 @@
                                         </td>
                                     </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>

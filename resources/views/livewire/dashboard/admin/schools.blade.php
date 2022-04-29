@@ -33,7 +33,6 @@
                             placeholder="{{ __('lang.SearchSchoolPlaceHolder') }}" wire:model="search">
                     </div>
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body no-padding">
                     <div class="table-responsive">
                         <table class="table table-hover">
@@ -71,14 +70,13 @@
                                                 class="waves-effect waves-circle btn btn-circle btn-danger btn-xs mb-5"><i
                                                     class="iconly-Delete"></i></button>
                                         </td>
-
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
                     <div class="d-flex justify-content-center">
-
+                        {{ $schools->links() }}
                     </div>
                 </div>
             </div>
@@ -90,19 +88,69 @@
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLongTitle">{{ __('lang.AddingNewSchool') }}
-                    </h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer text-center">
-
-                </div>
+                <form wire:submit.prevent="addSchool">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLongTitle">{{ __('lang.AddingNewSchool') }}
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>{{ __('lang.Email') }}</label>
+                                    <input type="email" class="form-control h-50" wire:model.lazy="email"
+                                        placeholder="{{ __('lang.EmailPlaceHolder') }}">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>{{ __('lang.Fullname') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="fullname"
+                                        placeholder="{{ __('lang.FullnamePlaceHolder') }}">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>{{ __('lang.PhoneNo') }}</label>
+                                    <input
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        type="number" maxlength="10" class="form-control h-50"
+                                        wire:model.lazy="phoneNo" placeholder="{{ __('lang.PhoneNoPlaceHolder') }}">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>{{ __('lang.SchoolName') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="schoolName"
+                                        placeholder="{{ __('lang.SchoolNamePlaceHolder') }}">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>{{ __('lang.City') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="city"
+                                        placeholder="{{ __('lang.CityPlaceHolder') }}">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>{{ __('lang.Address') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="address"
+                                        placeholder="{{ __('lang.AddressPlaceHolder') }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" data-dismiss="modal"
+                            class="btn btn-danger">{{ __('lang.Close') }}</button>
+                        <button type="submit"
+                            class="btn btn-success">{{ __('lang.Create') }}</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

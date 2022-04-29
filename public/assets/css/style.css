@@ -1061,7 +1061,7 @@ hr {
   .bg-none-small {
     background: none !important; } }
 /*******************
-Padding property 
+Padding property
 *******************/
 .p-0 {
   padding: 0px !important; }
@@ -3962,7 +3962,7 @@ Padding property
     padding-top: 100px !important;
     padding-bottom: 100px !important; } }
 /*******************
-Margin property 
+Margin property
 *******************/
 .m-0 {
   margin: 0px !important; }
@@ -6863,7 +6863,7 @@ Margin property
     margin-top: 100px !important;
     margin-bottom: 100px !important; } }
 /*******************
-Width property 
+Width property
 *******************/
 .w-0 {
   width: 0px !important; }
@@ -9242,7 +9242,7 @@ Width property
   .max-w-lg-auto {
     max-width: auto; } }
 /*******************
-Height property 
+Height property
 *******************/
 .h-0 {
   height: 0px !important; }
@@ -18685,7 +18685,7 @@ input[type="color"] {
 .form-control {
   border-radius: 5px;
   box-shadow: none;
-  border-color: #86a4c3;
+  border-color: #687CD0;
   height: auto; }
   .form-control:focus {
     box-shadow: none; }
@@ -18729,18 +18729,18 @@ textarea.form-control {
 
 .input-group .input-group-addon {
   border-radius: 5px 0px 0px 5px;
-  border-color: #86a4c3;
+  border-color: #687CD0;
   background-color: #ffffff; }
 .input-group .input-group-text {
   padding: .425rem .75rem;
   background-color: #ffffff;
-  border-color: #86a4c3;
+  border-color: #687CD0;
   border-radius: 5px; }
 
 .input-group-addon {
   font-weight: 300;
   padding: .425rem .75rem;
-  border: 1px solid #86a4c3;
+  border: 1px solid #687CD0;
   line-height: 1.25;
   color: #687CD0;
   text-align: center;

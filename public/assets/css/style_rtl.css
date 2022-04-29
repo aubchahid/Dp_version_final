@@ -13,7 +13,7 @@ File: rtl scss
   direction: rtl; }
 
 /*******************
-Padding property 
+Padding property
 *******************/
 .rtl .pl-0 {
   padding-right: 0px !important;
@@ -1024,7 +1024,7 @@ Padding property
     padding-left: 100px !important;
     padding-right: inherit !important; } }
 /*******************
-Margin property 
+Margin property
 *******************/
 .rtl .ml-0 {
   margin-right: 0px !important;
@@ -2572,7 +2572,7 @@ Margin property
 .rtl .right .direct-chat-text p {
   float: left; }
 .rtl .form-control + .input-group-addon:not(:first-child) {
-  border-left: 1px solid #86a4c3;
+  border-left: 1px solid #687CD0;
   border-right: 0;
   border-radius: 5px 0px 0px 5px; }
 .rtl .form-control + .input-group-addon:not(:first-child) {
