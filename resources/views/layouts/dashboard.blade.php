@@ -120,7 +120,7 @@
                             <li><a href="/schools"><i class="iconly-Bookmark">
                                         <span class="path1"></span><span
                                             class="path2"></span></i>{{ __('lang.Schools') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-User3">
+                            <li><a href="/users"><i class="iconly-User3">
                                         <span class="path1"></span><span
                                             class="path2"></span></i>{{ __('lang.Users') }}</a></li>
                             <li><a href="/demandes"><i class="iconly-Graph">
@@ -182,6 +182,8 @@
         window.livewire.on('success', () => {
             $('#detailsRequest').modal('hide');
             $('#addSchool').modal('hide');
+            $('#editSchool').modal('hide');
+
         });
         window.addEventListener('contentChanged', e => {
             const Toast = Swal.mixin({

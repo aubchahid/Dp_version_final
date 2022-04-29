@@ -23,4 +23,5 @@ return [
     "Address" => "عنوان مدرسة تعليم القيادة",
     "AddressPlaceHolder" => "أدخل عنوان مدرسة تعليم القيادة",
     "Send" => "أرسل الطلب",
+    "SchoolDeleted" => "l'école est supprimée avec succes",
 ];

@@ -64,9 +64,9 @@
                                         <td>
                                             <button type="button"
                                                 class="waves-effect waves-circle btn btn-circle btn-info btn-xs mb-5"><i
-                                                    class="iconly-Show"></i></button><button type="button"
+                                                    class="iconly-Show"></i></button><button type="button" data-toggle="modal" wire:click.prevent="editSchool({{$sc->id}})" data-target="#editSchool"
                                                 class="waves-effect waves-circle btn btn-circle btn-warning btn-xs mb-5"><i
-                                                    class="iconly-Edit"></i></button><button type="button"
+                                                    class="iconly-Edit"></i></button><button type="button" wire:click.prevent="deleteSchool({{$sc->id}})"
                                                 class="waves-effect waves-circle btn btn-circle btn-danger btn-xs mb-5"><i
                                                     class="iconly-Delete"></i></button>
                                         </td>
@@ -154,5 +154,71 @@
             </div>
         </div>
     </div>
+
+
+
+     <!-- Modal edit School -->
+    <div wire:ignore.self class="modal fade" id="editSchool" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form wire:submit.prevent="updateSchool">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLongTitle">{{ __('lang.UpdatingSchool') }}
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            
+                        
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>{{ __('lang.PhoneNo') }}</label>
+                                    <input
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        type="number" maxlength="10" class="form-control h-50"
+                                        wire:model.lazy="phoneNo" placeholder="{{ __('lang.PhoneNoPlaceHolder') }}" name="phoneNo" id="phoneNo">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>{{ __('lang.SchoolName') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="schoolName"
+                                        placeholder="{{ __('lang.SchoolNamePlaceHolder') }}" name="schoolName" id="schoolName">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>{{ __('lang.City') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="city"
+                                        placeholder="{{ __('lang.CityPlaceHolder') }}" name="city" id="city">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>{{ __('lang.Address') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="address"
+                                        placeholder="{{ __('lang.AddressPlaceHolder') }}" name="address" id="address">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" data-dismiss="modal"
+                            class="btn btn-danger">{{ __('lang.Close') }}</button>
+                        <button type="submit" 
+                            class="btn btn-success">{{ __('lang.Update') }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 </section>

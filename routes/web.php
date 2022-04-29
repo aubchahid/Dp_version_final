@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Dashboard\Users;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,4 +39,5 @@ Route::middleware(['auth'])->group(function () {
     Route::any('/demandes', Demandes::class)->name('demandes');
     Route::any('/schools', Schools::class)->name('schools');
     Route::any('/details-school/{id}', Schools::class);
+    Route::any('/users', Users::class)->name('users');
 });

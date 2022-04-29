@@ -35,6 +35,7 @@ return [
     "Stats" => "الاحصائيات الشهرية",
     "Currancy" => "درهما",
     "DemandesMenu" => "طلبات التسجيل",
+    "UsersMenu" => "المستخدمون",
     "SchoolNameTable" => "اسم مدرسة لتعليم القيادة",
     "DateOfDemande" => "تاريخ الطلب",
     "Open" => "افتح",
@@ -61,6 +62,7 @@ return [
     "AdminOf" => "مشرف",
     "SearchSchoolPlaceHolder" => "البحث باسم المدرسة",
     "AddingNewSchool" => "إضافة مدرسة لتعليم قيادة",
+    "UpdatingSchool" => "تغيير بيانات المدرسة",
     "Users" => "المستخدمون",
     "SchoolManagement" => "إدارة مدرسة لتعليم قيادة",
     "Tools" => "أدوات",
@@ -77,5 +79,12 @@ return [
     "Arabe" => "العربية",
     "Français" => "الفرنسية",
     "Create" => "أنشئ مدرسة",
+    "Update" => "تغيير مدرسة",
     "SchoolAdded" => "تم إنشاء المدرسة بنجاح",
+    "SchoolDeleted" => " تم مسح المدرسة بنجاح",
+    "UpdateSchool" => "تغيير",
+    "SchoolUpdated" => "تم تغيير بيانات المدرسة بنجاح",
+    "RoleUser" => "دور المستخدم",
+    
+    "Email" => "البريد الالكتروني",
 ];

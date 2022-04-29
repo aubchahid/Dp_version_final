@@ -15,9 +15,8 @@ class Schools extends Component
     protected $paginationTheme = 'bootstrap';
     public $idInscription, $search = '';
 
-    public $email, $fullname, $phoneNo, $schoolName, $address, $city;
-
-
+    public $email, $fullname, $phoneNo, $schoolName, $address, $city,$id_sc;
+    
     public function addSchool()
     {
         $user = new User();
@@ -40,6 +39,48 @@ class Schools extends Component
         $this->emit('success');
         $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.SchoolAdded')]);
     }
+    public function deleteSchool($id){
+        School::where('id', $id)->delete();
+        $this->emit('success');
+        $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.SchoolDeleted')]);
+    }
+
+    public function editSchool($id){
+        $school_up = School::find($id);
+        $this->id_sc=$id;
+        $this->schoolName = $school_up->name;
+        $this->phoneNo = $school_up->phoneNo;
+        $this->address = $school_up->address;
+        $this->city = $school_up->city;
+    
+    }
+
+    public function updateSchool()
+    {
+        $this->validate([
+            'schoolName' => 'required',
+            'phoneNo' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+         
+        ]);
+
+        School::where('id', $this->id_sc)->update([
+            'name' => $this->schoolName,
+            'phoneNo' => $this->phoneNo,
+            'address' => $this->address,
+            'city' => $this->city,
+            
+        ]);
+
+        $this->emit('success');
+        $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.SchoolUpdated')]);
+    }
+
+
+
+
+
 
     public function render()
     {
