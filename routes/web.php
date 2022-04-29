@@ -34,11 +34,9 @@ Route::any('/logout', function (Request $request) {
 
 
 
-
-
-
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::any('/', Index::class)->name('index');
     Route::any('/demandes', Demandes::class)->name('demandes');
-    Route::any('/schools', Schools::class)->name('demandes');
+    Route::any('/schools', Schools::class)->name('schools');
+    Route::any('/details-school/{id}', Schools::class);
 });

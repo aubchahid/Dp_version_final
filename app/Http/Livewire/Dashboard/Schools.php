@@ -35,6 +35,8 @@ class Schools extends Component
         $school->user_id = $user->id;
         $school->save();
 
+        // *TO-DO Send a message to the user with a password
+
         $this->emit('success');
         $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.SchoolAdded')]);
     }

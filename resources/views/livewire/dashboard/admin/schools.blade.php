@@ -51,7 +51,7 @@
                                 @foreach ($schools as $sc)
                                     <tr>
                                         <td>{{ $sc->id }}</td>
-                                        <td><a href="">{{ __('lang.School') . ' ' . $sc->name }}</a></td>
+                                        <td><a href="/details-school/{{$sc->id}}">{{ __('lang.School') . ' ' . $sc->name }}</a></td>
                                         <td>{{ $sc->admin->name }}</td>
                                         <td>{{ $sc->phoneNumber($sc->phoneNo) }}</td>
                                         <td>
@@ -83,7 +83,7 @@
         </div>
     </div>
 
-    <!-- Modal Details Request -->
+    <!-- Modal Add School -->
     <div wire:ignore.self class="modal fade" id="addSchool" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">

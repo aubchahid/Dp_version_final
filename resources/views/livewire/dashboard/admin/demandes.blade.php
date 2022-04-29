@@ -96,7 +96,6 @@
         </div>
     </div>
 
-
     <!-- Modal Details Request -->
     <div wire:ignore.self class="modal fade" id="detailsRequest" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
