@@ -43,4 +43,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(School::class);
     }
+
+    public function facture()
+    {
+        return $this->hasMany(Facturation::class, 'user_id');
+    }
 }

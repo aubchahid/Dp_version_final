@@ -15,7 +15,7 @@ class Schools extends Component
     protected $paginationTheme = 'bootstrap';
     public $idInscription, $search = '';
 
-    public $email, $fullname, $phoneNo, $schoolName, $address, $city,$id_sc;
+    public $email, $fullname, $phoneNo, $schoolName, $address, $city, $id_sc;
     
     public function addSchool()
     {
@@ -52,7 +52,6 @@ class Schools extends Component
         $this->phoneNo = $school_up->phoneNo;
         $this->address = $school_up->address;
         $this->city = $school_up->city;
-    
     }
 
     public function updateSchool()
@@ -76,11 +75,6 @@ class Schools extends Component
         $this->emit('success');
         $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.SchoolUpdated')]);
     }
-
-
-
-
-
 
     public function render()
     {

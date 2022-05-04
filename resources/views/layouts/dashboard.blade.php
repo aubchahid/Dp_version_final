@@ -123,7 +123,7 @@
                             <li><a href="/users"><i class="iconly-User3">
                                         <span class="path1"></span><span
                                             class="path2"></span></i>{{ __('lang.Users') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-Graph">
+                            <li><a href="/facturations"><i class="iconly-Graph">
                                         <span class="path1"></span><span
                                             class="path2"></span></i>{{ __('lang.Stats') }}</a></li>
                             <li><a href="/demandes"><i class="iconly-Info-Square">
@@ -138,7 +138,7 @@
                             <li><a href="/demandes"><i class="iconly-Calendar">
                                         <span class="path1"></span><span
                                             class="path2"></span></i>{{ __('lang.Seances') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-User2">
+                            <li><a href="/candidats"><i class="iconly-User2">
                                         <span class="path1"></span><span
                                             class="path2"></span></i>{{ __('lang.Candidates') }}</a></li>
                             <li><a href="/demandes"><i class="iconly-Profile">
@@ -183,7 +183,10 @@
             $('#detailsRequest').modal('hide');
             $('#addSchool').modal('hide');
             $('#editSchool').modal('hide');
-
+            $('#edituser').modal('hide');
+            $('#addUser').modal('hide');
+            $('#addfacturation').modal('hide');
+            $('#editfacturation').modal('hide');
         });
         window.addEventListener('contentChanged', e => {
             const Toast = Swal.mixin({
