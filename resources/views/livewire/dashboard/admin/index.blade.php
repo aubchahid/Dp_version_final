@@ -21,8 +21,9 @@
                 <div class="box-body d-flex align-items-center">
                     <i class="iconly-Notification h1 ml-2"></i>
                     <div class="d-flex flex-column flex-grow-1">
-                        <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.Demandes') }}</h5>
-                        <a href="/demandes">{{ $inscriptions->count() . ' ' . __('lang.Demande') }}</a>
+                        <h5 class="box-title font-size-16 font-weight-bold mb-2 ">{{ __('lang.Demandes') }}</h5>
+                        <a href="/demandes"
+                            class="dark-text">{{ $inscriptions->count() . ' ' . __('lang.Demande') }}</a>
                     </div>
                 </div>
             </div>
@@ -34,7 +35,8 @@
 
                     <div class="d-flex flex-column flex-grow-1">
                         <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.Candidates') }}</h5>
-                        <a href="#">0 {{ __('lang.Candidate') }}</a>
+                        <a href="/candidats"
+                            class="dark-text">{{ $candidats->count() . ' ' . __('lang.Candidate') }}</a>
                     </div>
                 </div>
             </div>
@@ -46,7 +48,8 @@
 
                     <div class="d-flex flex-column flex-grow-1">
                         <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.Schools') }}</h5>
-                        <a href="#">{{ $schools->count() . ' ' . __('lang.School') }}</a>
+                        <a href="/schools"
+                            class="dark-text">{{ $schools->count() . ' ' . __('lang.School') }}</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +61,7 @@
 
                     <div class="d-flex flex-column flex-grow-1">
                         <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.Stats') }}</h5>
-                        <a href="#">0 {{ __('lang.Currancy') }}</a>
+                        <a href="#" class="dark-text">0 {{ __('lang.Currancy') }}</a>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Livewire\Dashboard;
+namespace App\Http\Livewire\Dashboard\Admin;
 
+use App\Models\Candidat;
 use App\Models\Inscription;
 use App\Models\School;
 use App\Models\User;
@@ -72,6 +73,7 @@ class Index extends Component
     {
         $inscription = Inscription::where('status', '=', 0)->where('fullname', 'like', '%' . $this->search . '%')->orWhere('schoolName', 'like', '%' . $this->search . '%')->orderBy('created_at', 'desc')->limit(5)->get();
         $school = School::get();
-        return view('livewire.dashboard.admin.index', ['inscriptions' => $inscription, "schools" => $school])->layout('layouts.dashboard', ['title' => 'Dashboard']);
+        $candidats = Candidat::get();
+        return view('livewire.dashboard.admin.index', ['inscriptions' => $inscription, "schools" => $school, "candidats" => $candidats])->layout('layouts.dashboard', ['title' => 'Dashboard']);
     }
 }

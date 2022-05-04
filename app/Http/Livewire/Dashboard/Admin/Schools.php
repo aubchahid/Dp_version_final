@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Dashboard;
+namespace App\Http\Livewire\Dashboard\Admin;
 
 use App\Models\School;
 use App\Models\User;
@@ -41,9 +41,36 @@ class Schools extends Component
         $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.SchoolAdded')]);
     }
 
+    public function deleteSchool()
+    {
+        School::find($this->idInscription)->delete();
+        $this->emit('success');
+        $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.SchoolDeletedSuccessfully')]);
+    }
+
+    public function activateSchool()
+    {
+        $school = School::find($this->idInscription);
+        $school->status = 1;
+        $school->save();
+        $this->emit('success');
+        $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.ActivateMsg')]);
+    }
+
+    public function desactivateSchool()
+    {
+        $school = School::find($this->idInscription);
+        $school->status = 0;
+        $school->save();
+        $this->emit('success');
+        $this->dispatchBrowserEvent('contentChanged', ['item' => __('lang.DesactiveMsg')]);
+    }
+
     public function render()
     {
         $schools = School::where('name', 'like', '%' . $this->search . '%')->paginate(10);
-        return view('livewire.dashboard.admin.schools', ['schools' => $schools])->layout('layouts.dashboard', ['title' => "Auto-écoles"]);
+        $inactifSchool = School::where('status', 0)->get();
+        $actifSchool = School::where('status', 1)->get();
+        return view('livewire.dashboard.admin.schools', ['schools' => $schools, "inactifSchool" => $inactifSchool, "actifSchool" => $actifSchool])->layout('layouts.dashboard', ['title' => "Auto-écoles"]);
     }
 }

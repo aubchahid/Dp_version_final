@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Dashboard;
+namespace App\Http\Livewire\Dashboard\Admin;
 
 use App\Models\Inscription;
 use App\Models\School;
@@ -20,8 +20,12 @@ class Demandes extends Component
 
     public $idInscription, $search = '';
 
+    public $loading = false;
+
     public function setValueToModal($id)
     {
+
+        $this->idInscription = $id;
         $ins = Inscription::find($id);
         $this->email = $ins->email;
         $this->fullname = $ins->fullname;
@@ -29,8 +33,8 @@ class Demandes extends Component
         $this->schoolName = $ins->schoolName;
         $this->address = $ins->address;
         $this->city = $ins->city;
-        $this->idInscription = $ins->id;
         $this->status = $ins->status;
+        $this->loading = true;
     }
 
     public function acceptRequest()

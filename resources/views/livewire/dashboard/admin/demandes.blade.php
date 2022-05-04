@@ -13,7 +13,7 @@
                     <i class="iconly-Notification h1 ml-2"></i>
                     <div class="d-flex flex-column flex-grow-1">
                         <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.Demandes') }}</h5>
-                        <a>{{ $inscriptions->count() . ' ' . __('lang.Demande') }}</a>
+                        <a class="dark-text">{{ $inscriptions->count() . ' ' . __('lang.Demande') }}</a>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <i class="iconly-Notification h1 ml-2"></i>
                     <div class="d-flex flex-column flex-grow-1">
                         <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.DemandeInHold') }}</h5>
-                        <a>{{ $inscriptionInHold->count() . ' ' . __('lang.Demande') }}</a>
+                        <a class="dark-text">{{ $inscriptionInHold->count() . ' ' . __('lang.Demande') }}</a>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <i class="iconly-Notification h1 ml-2"></i>
                     <div class="d-flex flex-column flex-grow-1">
                         <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.DemandeRejected') }}</h5>
-                        <a>{{ $inscriptionRefused->count() . ' ' . __('lang.Demande') }}</a>
+                        <a class="dark-text">{{ $inscriptionRefused->count() . ' ' . __('lang.Demande') }}</a>
                     </div>
                 </div>
             </div>
@@ -102,73 +102,79 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLongTitle">{{ __('lang.DetailsOfRequest') }}
+                    <h4 class="modal-title dark-text" id="exampleModalLongTitle">{{ __('lang.DetailsOfRequest') }}
                     </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label>{{ __('lang.Email') }}</label>
-                                <input type="email" class="form-control h-50" wire:model.lazy="email" disabled
-                                    placeholder="{{ __('lang.EmailPlaceHolder') }}">
+                <div wire:loading class="text-center">
+                    <img src="{{ asset('assets/images/loading.gif') }}" class="h-80 w-80 text-center" alt=""
+                        srcset="">
+                </div>
+                <div wire:loading.remove>>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="dark-text">{{ __('lang.Email') }}</label>
+                                    <input type="email" class="form-control h-50" wire:model.lazy="email" disabled
+                                        placeholder="{{ __('lang.EmailPlaceHolder') }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label>{{ __('lang.Fullname') }}</label>
-                                <input type="text" class="form-control h-50" wire:model.lazy="fullname" disabled
-                                    placeholder="{{ __('lang.FullnamePlaceHolder') }}">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="dark-text">{{ __('lang.Fullname') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="fullname" disabled
+                                        placeholder="{{ __('lang.FullnamePlaceHolder') }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>{{ __('lang.PhoneNo') }}</label>
-                                <input
-                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                    type="number" maxlength="10" class="form-control h-50" disabled
-                                    wire:model.lazy="phoneNo" placeholder="{{ __('lang.PhoneNoPlaceHolder') }}">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="dark-text">{{ __('lang.PhoneNo') }}</label>
+                                    <input
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        type="number" maxlength="10" class="form-control h-50" disabled
+                                        wire:model.lazy="phoneNo" placeholder="{{ __('lang.PhoneNoPlaceHolder') }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label>{{ __('lang.SchoolName') }}</label>
-                                <input type="text" class="form-control h-50" wire:model.lazy="schoolName" disabled
-                                    placeholder="{{ __('lang.SchoolNamePlaceHolder') }}">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="dark-text">{{ __('lang.SchoolName') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="schoolName" disabled
+                                        placeholder="{{ __('lang.SchoolNamePlaceHolder') }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label>{{ __('lang.City') }}</label>
-                                <input type="text" class="form-control h-50" wire:model.lazy="city" disabled
-                                    placeholder="{{ __('lang.CityPlaceHolder') }}">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="dark-text">{{ __('lang.City') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="city" disabled
+                                        placeholder="{{ __('lang.CityPlaceHolder') }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>{{ __('lang.Address') }}</label>
-                                <input type="text" class="form-control h-50" wire:model.lazy="address" disabled
-                                    placeholder="{{ __('lang.AddressPlaceHolder') }}">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="dark-text">{{ __('lang.Address') }}</label>
+                                    <input type="text" class="form-control h-50" wire:model.lazy="address" disabled
+                                        placeholder="{{ __('lang.AddressPlaceHolder') }}">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer text-center">
-                    @if ($status == 0)
-                        <button type="button" wire:click="refuseRequest"
-                            class="btn btn-danger">{{ __('lang.Refuser') }}</button>
-                        <button type="button" wire:click="acceptRequest"
-                            class="btn btn-success">{{ __('lang.Accept') }}</button>
-                    @endif
-                    @if ($status == 1)
-                        <label for="">{{ __('lang.Demande') . ' ' . __('lang.Successfully') }}</label>
-                    @endif
-                    @if ($status == 100)
-                        <label for="">{{ __('lang.Demande') . ' ' . __('lang.Rejected') }}</label>
-                    @endif
+                    <div class="modal-footer text-center">
+                        @if ($status == 0)
+                            <button type="button" wire:click="refuseRequest"
+                                class="btn btn-danger">{{ __('lang.Refuser') }}</button>
+                            <button type="button" wire:click="acceptRequest"
+                                class="btn btn-success">{{ __('lang.Accept') }}</button>
+                        @endif
+                        @if ($status == 1)
+                            <label for="">{{ __('lang.Demande') . ' ' . __('lang.Successfully') }}</label>
+                        @endif
+                        @if ($status == 100)
+                            <label for="">{{ __('lang.Demande') . ' ' . __('lang.Rejected') }}</label>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

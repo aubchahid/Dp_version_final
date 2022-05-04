@@ -43,4 +43,17 @@ class User extends Authenticatable
     {
         return $this->hasOne(School::class);
     }
+
+    public function returnRole($role)
+    {
+        if ($role === "ROLE_ADMIN") {
+            $role = __('lang.Admin');
+        } else if ($role === "ROLE_SCHOOL") {
+            $role = __('lang.Owner');
+        } else if ($role === "ROLE_CANDIDAT") {
+            $role = __('lang.Candidat');
+        }
+
+        return $role;
+    }
 }

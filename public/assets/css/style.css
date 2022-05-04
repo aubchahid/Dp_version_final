@@ -24083,3 +24083,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.dark-text{
+  color : #1B1B1B !important;
+}
