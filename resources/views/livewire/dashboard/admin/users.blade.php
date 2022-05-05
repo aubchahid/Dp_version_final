@@ -58,9 +58,8 @@
                 <div class="box-header with-border">
                     <h4 class="box-title"><button type="button" data-toggle="modal" data-target="#addUser"
                             class="waves-effect waves-light btn btn-primary mb-5">{{ __('lang.AddCandidat') }}</button>
-                    </h4>
                     <div class="box-controls pull-right">
-                        <input type="text" class="form-control" placeholder="{{ __('lang.SearchByCandidatName') }}"
+                        <input type="text" class="form-control" placeholder="{{ __('lang.SearchPlaceHolderUser') }}"
                             wire:model="search">
                     </div>
                 </div>
@@ -73,6 +72,7 @@
                                     <th>{{ __('lang.Fullname') }}</th>
                                     <th>{{ __('lang.Email') }}</th>
                                     <th>{{ __('lang.RoleUser') }}</th>
+
                                     <th>{{ __('lang.Created_At') }}</th>
                                   
                                     <th></th>
@@ -110,7 +110,6 @@
                                         </td>
                                     </tr>
                                 @endforeach
-   
                             </tbody>
                         </table>
                     </div>

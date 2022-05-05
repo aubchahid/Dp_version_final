@@ -35,21 +35,15 @@
                     <span class="icon-Align-left"><span class="path1"></span><span
                             class="path2"></span><span class="path3"></span></span>
                 </a>
-                <!-- Logo -->
                 <a href="index.html" class="logo">
-                    {{-- <!-- logo-->
                     <div class="logo-lg">
-                        <span class="light-logo"><img src="../images/logo-light-text.png" alt="logo"></span>
-                        <span class="dark-logo"><img src="../images/logo-dark-text.png" alt="logo"></span>
-                    </div> --}}
+                        <span class="light-logo font-weight-bold font-size-22 text-white">DabaPermis</span>
+                    </div>
                 </a>
             </div>
-            <!-- Header Navbar -->
             <nav class="navbar navbar-static-top">
-                <!-- Sidebar toggle button-->
                 <div class="app-menu">
                     <ul class="header-megamenu nav">
-
                         <li class="btn-group nav-item d-md-none">
                             <a href="#" class="waves-effect waves-light nav-link push-btn" data-toggle="push-menu"
                                 role="button">
@@ -73,10 +67,8 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="navbar-custom-menu r-side">
                     <ul class="nav navbar-nav">
-                        <!-- User Account-->
                         <li class="dropdown user user-menu">
                             <a href="#" class="waves-effect waves-light dropdown-toggle" data-toggle="dropdown"
                                 title="User">
@@ -103,80 +95,98 @@
         </header>
 
         <aside class="main-sidebar">
-            <!-- sidebar-->
             <section class="sidebar position-relative">
                 <div class="multinav">
                     <div class="multinav-scroll" style="height: 100%;">
-                        <!-- sidebar menu-->
                         <ul class="sidebar-menu" data-widget="tree">
                             <li class="header" style="color: white">
                                 <h6 class="text-white">{{ __('lang.Management') }}</h6>
                             </li>
-                            <li><a href="/"><i class="iconly-Category"><span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Dashboard') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-Send">
+                            <li>
+                                <a href="/"><i class="iconly-Category"><span class="path1"></span><span
+                                            class="path2"></span></i><span>{{ __('lang.Dashboard') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/demandes"><i class="iconly-Send">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.DemandesMenu') }}</a></li>
-                            <li><a href="/schools"><i class="iconly-Bookmark">
+                                            class="path2"></span></i><span>{{ __('lang.DemandesMenu') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/schools"><i class="iconly-Bookmark">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Schools') }}</a></li>
-                            <li><a href="/users"><i class="iconly-User3">
+                                            class="path2"></span></i><span>{{ __('lang.Schools') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/users"><i class="iconly-User3">
                                         <span class="path1"></span><span
                                             class="path2"></span></i>{{ __('lang.Users') }}</a></li>
                             <li><a href="/facturations"><i class="iconly-Graph">
+
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Stats') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-Info-Square">
+                                            class="path2"></span></i><span>{{ __('lang.Stats') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/users"><i class="iconly-Info-Square">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Courses') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-Folder">
+                                            class="path2"></span></i><span>{{ __('lang.Courses') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/users"><i class="iconly-Folder">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Test&Exams') }}</a></li>
+                                            class="path2"></span></i><span>{{ __('lang.Test&Exams') }}</span></a>
+                            </li>
                             <li class="header" style="color: white">
                                 <h6 class="text-white">{{ __('lang.SchoolManagement') }}</h6>
                             </li>
-                            <li><a href="/demandes"><i class="iconly-Calendar">
+                            <li>
+                                <a href="/seances"><i class="iconly-Calendar">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Seances') }}</a></li>
-                            <li><a href="/candidats"><i class="iconly-User2">
+                                            class="path2"></span></i><span>{{ __('lang.Seances') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/candidats"><i class="iconly-User2">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Candidates') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-Profile">
+                                            class="path2"></span></i><span>{{ __('lang.Candidates') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/moniteurs"><i class="iconly-Profile">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Moniteurs') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-Ticket">
+                                            class="path2"></span></i><span>{{ __('lang.Moniteurs') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/parkings"><i class="iconly-Ticket">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Parking') }}</a></li>
+                                            class="path2"></span></i><span>{{ __('lang.Cars') }}</span></a>
+                            </li>
                             <li class="header" style="color: white">
                                 <h6 class="text-white">{{ __('lang.Tools') }}</h6>
                             </li>
-                            <li><a href="/demandes"><i class="iconly-Message">
+                            <li>
+                                <a href="/users"><i class="iconly-Message">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Inbox') }}</a></li>
-                            <li><a href="/demandes"><i class="iconly-Danger">
+                                            class="path2"></span></i><span>{{ __('lang.Inbox') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="/users"><i class="iconly-Danger">
                                         <span class="path1"></span><span
-                                            class="path2"></span></i>{{ __('lang.Help') }}</a></li>
+                                            class="path2"></span></i><span>{{ __('lang.Help') }}</span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
         </aside>
-
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <div class="container-full">
                 {{ $slot }}
             </div>
         </div>
-
-        <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
         <div class="control-sidebar-bg"></div>
-
     </div>
-    <!-- ./wrapper -->
 
 
     @livewireScripts
+    @stack('scripts')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         window.livewire.on('success', () => {
@@ -187,6 +197,7 @@
             $('#addUser').modal('hide');
             $('#addfacturation').modal('hide');
             $('#editfacturation').modal('hide');
+
         });
         window.addEventListener('contentChanged', e => {
             const Toast = Swal.mixin({

@@ -21,7 +21,6 @@ class Candidat extends Model
 
     public function phoneNumber($number)
     {
-
         $ac = substr($number, 0, 2);
         $prefix = substr($number, 2, 2);
         $suffix = substr($number, 4, 2);

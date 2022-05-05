@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Dashboard;
+namespace App\Http\Livewire\Dashboard\Admin;
 
 use App\Models\School;
 use App\Models\User;
@@ -79,6 +79,7 @@ class Schools extends Component
     public function render()
     {
         $schools = School::where('name', 'like', '%' . $this->search . '%')->paginate(10);
+        
         return view('livewire.dashboard.admin.schools', ['schools' => $schools])->layout('layouts.dashboard', ['title' => "Auto-écoles"]);
     }
 }

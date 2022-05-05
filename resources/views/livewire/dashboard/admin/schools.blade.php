@@ -13,13 +13,34 @@
                     <i class="iconly-Bookmark h1 ml-2"></i>
                     <div class="d-flex flex-column flex-grow-1">
                         <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.Schools') }}</h5>
-                        <a>{{ $schools->count() . ' ' . __('lang.School') }}</a>
+                        <a class="dark-text">{{ $schools->count() . ' ' . __('lang.School') }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="box">
+                <div class="box-body d-flex align-items-center">
+                    <i class="iconly-Bookmark h1 ml-2"></i>
+                    <div class="d-flex flex-column flex-grow-1">
+                        <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.InactifSchool') }}</h5>
+                        <a class="dark-text">{{ $inactifSchool->count() . ' ' . __('lang.School') }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="box">
+                <div class="box-body d-flex align-items-center">
+                    <i class="iconly-Bookmark h1 ml-2"></i>
+                    <div class="d-flex flex-column flex-grow-1">
+                        <h5 class="box-title font-size-16 font-weight-bold mb-2">{{ __('lang.ActifSchool') }}</h5>
+                        <a class="dark-text">{{ $actifSchool->count() . ' ' . __('lang.School') }}</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <div class="row">
         <div class="col-12">
@@ -51,7 +72,9 @@
                                 @foreach ($schools as $sc)
                                     <tr>
                                         <td>{{ $sc->id }}</td>
-                                        <td><a href="/details-school/{{$sc->id}}">{{ __('lang.School') . ' ' . $sc->name }}</a></td>
+                                        <td><a
+                                                href="/details-school/{{ $sc->id }}">{{ __('lang.School') . ' ' . $sc->name }}</a>
+                                        </td>
                                         <td>{{ $sc->admin->name }}</td>
                                         <td>{{ $sc->phoneNumber($sc->phoneNo) }}</td>
                                         <td>
@@ -62,11 +85,12 @@
                                                 {{ \Carbon\Carbon::parse($sc->created_at)->diffForHumans() }}</span>
                                         </td>
                                         <td>
-                                            <button type="button"
+                                            <a href="/details-school/{{ $sc->id }}"
                                                 class="waves-effect waves-circle btn btn-circle btn-info btn-xs mb-5"><i
                                                     class="iconly-Show"></i></button><button type="button" data-toggle="modal" wire:click.prevent="editSchool({{$sc->id}})" data-target="#editSchool"
                                                 class="waves-effect waves-circle btn btn-circle btn-warning btn-xs mb-5"><i
                                                     class="iconly-Edit"></i></button><button type="button" wire:click.prevent="deleteSchool({{$sc->id}})"
+
                                                 class="waves-effect waves-circle btn btn-circle btn-danger btn-xs mb-5"><i
                                                     class="iconly-Delete"></i></button>
                                         </td>
@@ -90,7 +114,7 @@
             <div class="modal-content">
                 <form wire:submit.prevent="addSchool">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLongTitle">{{ __('lang.AddingNewSchool') }}
+                        <h4 class="modal-title dark-text" id="exampleModalLongTitle">{{ __('lang.AddingNewSchool') }}
                         </h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -100,55 +124,54 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>{{ __('lang.Email') }}</label>
+                                    <label class="dark-text">{{ __('lang.Email') }}</label>
                                     <input type="email" class="form-control h-50" wire:model.lazy="email"
                                         placeholder="{{ __('lang.EmailPlaceHolder') }}">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>{{ __('lang.Fullname') }}</label>
+                                    <label class="dark-text">{{ __('lang.Fullname') }}</label>
                                     <input type="text" class="form-control h-50" wire:model.lazy="fullname"
                                         placeholder="{{ __('lang.FullnamePlaceHolder') }}">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label>{{ __('lang.PhoneNo') }}</label>
+                                    <label class="dark-text">{{ __('lang.PhoneNo') }}</label>
                                     <input
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                        type="number" maxlength="10" class="form-control h-50"
-                                        wire:model.lazy="phoneNo" placeholder="{{ __('lang.PhoneNoPlaceHolder') }}">
+                                        type="number" maxlength="10" class="form-control h-50" wire:model.lazy="phoneNo"
+                                        placeholder="{{ __('lang.PhoneNoPlaceHolder') }}">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>{{ __('lang.SchoolName') }}</label>
+                                    <label class="dark-text">{{ __('lang.SchoolName') }}</label>
                                     <input type="text" class="form-control h-50" wire:model.lazy="schoolName"
                                         placeholder="{{ __('lang.SchoolNamePlaceHolder') }}">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>{{ __('lang.City') }}</label>
+                                    <label class="dark-text">{{ __('lang.City') }}</label>
                                     <input type="text" class="form-control h-50" wire:model.lazy="city"
                                         placeholder="{{ __('lang.CityPlaceHolder') }}">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label>{{ __('lang.Address') }}</label>
+                                    <label class="dark-text">{{ __('lang.Address') }}</label>
                                     <input type="text" class="form-control h-50" wire:model.lazy="address"
                                         placeholder="{{ __('lang.AddressPlaceHolder') }}">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer text-center">
+                    <div class="modal-footer">
                         <button type="button" data-dismiss="modal"
                             class="btn btn-danger">{{ __('lang.Close') }}</button>
-                        <button type="submit"
-                            class="btn btn-success">{{ __('lang.Create') }}</button>
+                        <button type="submit" class="btn btn-success">{{ __('lang.Create') }}</button>
                     </div>
                 </form>
             </div>
@@ -216,9 +239,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 </section>
